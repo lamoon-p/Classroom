@@ -3,63 +3,51 @@ import java.util.List;
 
 public class School {
 
-    private List students = new ArrayList();
-    private List teachers = new ArrayList();
-    private List classes = new ArrayList();
+    private final List<Student> students = new ArrayList<>();
+    private final List<Teacher> teachers = new ArrayList<>();
+    private final List<Classroom> classes = new ArrayList<>();
 
-    public List getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(List students) {
-        this.students = students;
-    }
-
-    public List getTeachers() {
+    public List<Teacher> getTeachers() {
         return teachers;
     }
 
-    public void setTeachers(List teachers) {
-        this.teachers = teachers;
-    }
-
-    public List getClasses() {
+    public List<Classroom> getClasses() {
         return classes;
-    }
-
-    public void setClasses(List classes) {
-        this.classes = classes;
     }
 
     public void addStudent(Student student) {
         students.add(student);
+        System.out.println("StudentID " + student.getStudentID() + " added to school!");
     }
 
     public void removeStudent(Student student) {
         students.remove(student);
+        System.out.println("StudentID " + student.getStudentID() + " removed from school!");
     }
 
     public void addTeacher(Teacher teacher) {
         teachers.add(teacher);
+        System.out.println("TeacherID " + teacher.getTeacherID() + " added to school!");
     }
 
     public void removeTeacher(Teacher teacher) {
         teachers.remove(teacher);
+        System.out.println("TeacherID " + teacher.getTeacherID() + " removed from school!");
     }
 
-    // create classes by add students and teachers.
-        // get input from user on how many students and teachers want to join a classroom.
-        // create 2 loops each to add students or teachers
-        // inside those loops it needs to ask for index of students or teachers whose to join a classroom.
-
-    public void createClasses() {
-        List classroom = new ArrayList();
+    public void addClasses(Classroom classroom) {
+        classes.add(classroom);
+        System.out.println(classroom.getClassName() + " class added to school!");
     }
 
-
-
-    // if a classroom is empty. a function will set it to null.
-
+    public void removeClasses(Classroom classroom) {
+        classes.remove(classroom);
+        System.out.println(classroom.getClassName() + " class removed from school!");
+    }
 
     @Override
     public String toString() {
